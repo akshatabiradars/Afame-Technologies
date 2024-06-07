@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 
 # Load the trained model
-with open('iris_model.pkl', 'rb') as model_file:
+with open('IRIS Flower.csv', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Function to make predictions
