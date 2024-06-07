@@ -33,5 +33,6 @@ if st.button("Predict"):
         st.error("Model is not loaded correctly.")
 
 # Run the Streamlit app
+python streamlit_app.py
 if __name__ == "__main__":
     st.run()
