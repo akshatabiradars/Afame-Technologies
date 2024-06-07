@@ -18,5 +18,5 @@ clf = RandomForestClassifier(n_estimators=100)
 clf.fit(X_train, y_train)
 
 # Save the model to a file
-with open('iris_model.pkl', 'wb') as model_file:
+with open('IRIS Flower.csv', 'wb') as model_file:
     pickle.dump(clf, model_file)
