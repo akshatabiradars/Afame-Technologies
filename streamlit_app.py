@@ -32,6 +32,6 @@ if st.button("Predict"):
     else:
         st.error("Model is not loaded correctly.")
 
-# Run the Streamlit app
+# Run the Streamlit app directly
 if __name__ == "__main__":
-   
+    st._main()  # Execute the script directly with Streamlit
