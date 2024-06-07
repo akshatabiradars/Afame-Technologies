@@ -1,5 +1,5 @@
 # run.py
-streamlit run streamlit_app.py 
+
 import pickle
 
 # Load the model
