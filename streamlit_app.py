@@ -19,4 +19,4 @@ if st.button("Predict"):
 
 # Run the Streamlit app
 if __name__ == "__main__":
-    st.run()
+    
