@@ -9,7 +9,7 @@ try:
     with open('IRIS Flower.csv', 'rb') as model_file:
         model = pickle.load(model_file)
 except FileNotFoundError:
-    st.error("Model file not found. Please ensure 'iris_model.pkl' is in the correct directory.")
+    st.error("Model file not found. Please ensure 'IRIS Flower.csv' is in the correct directory.")
 except Exception as e:
     st.error(f"Error loading model: {e}")
 
