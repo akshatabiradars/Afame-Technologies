@@ -16,7 +16,6 @@ if st.button("Predict"):
     features = [[sepal_length, sepal_width, petal_length, petal_width]]
     prediction = model.predict(features)
     st.write(f"Predicted class: {prediction[0]}")
-
 # Run the Streamlit app
 if __name__ == "__main__":
     
