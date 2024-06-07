@@ -18,5 +18,5 @@ if st.button("Predict"):
     st.write(f"Predicted class: {prediction[0]}")
 
 # Run the Streamlit app
- if __name__ == "__main__":
+if __name__ == "__main__":
     
