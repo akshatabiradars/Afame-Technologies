@@ -5,9 +5,7 @@ import pickle
 # Load the model
 def load_model():
     with open('IRIS Flower.csv', 'rb') as f:
-        return pickle.load(f)
-
-model = load_model()
+        
 
 # User input for IRIS flower species prediction
 st.title("IRIS Flower Species Prediction")
