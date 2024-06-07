@@ -5,8 +5,13 @@ import numpy as np
 import pickle
 
 # Load the trained model
-with open('IRIS Flower.csv', 'rb') as model_file:
-    model = pickle.load(model_file)
+try:
+    with open('IRIS Flower.csv', 'rb') as model_file:
+        model = pickle.load(model_file)
+except FileNotFoundError:
+    st.error("Model file not found. Please ensure 'iris_model.pkl' is in the correct directory.")
+except Exception as e:
+    st.error(f"Error loading model: {e}")
 
 # Function to make predictions
 def predict_species(sepal_length, sepal_width, petal_length, petal_width):
@@ -38,19 +43,22 @@ input_data = user_input_features()
 st.subheader('User Input parameters')
 st.write(input_data)
 
-# Make prediction
-prediction, prediction_proba = predict_species(
-    input_data['sepal_length'], 
-    input_data['sepal_width'], 
-    input_data['petal_length'], 
-    input_data['petal_width']
-)
+if 'model' in locals():
+    # Make prediction
+    prediction, prediction_proba = predict_species(
+        input_data['sepal_length'], 
+        input_data['sepal_width'], 
+        input_data['petal_length'], 
+        input_data['petal_width']
+    )
 
-# Display prediction
-st.subheader('Prediction')
-iris_species = np.array(['Setosa', 'Versicolor', 'Virginica'])
-st.write(iris_species[prediction][0])
+    # Display prediction
+    st.subheader('Prediction')
+    iris_species = np.array(['Setosa', 'Versicolor', 'Virginica'])
+    st.write(iris_species[prediction][0])
 
-# Display prediction probability
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
+    # Display prediction probability
+    st.subheader('Prediction Probability')
+    st.write(prediction_proba)
+else:
+    st.error("Model could not be loaded. Please check the error messages above.")
